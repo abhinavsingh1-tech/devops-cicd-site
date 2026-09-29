@@ -35,6 +35,12 @@ jobs:
           cp index.html build/
           cp style.css build/
           cp script.js build/
+      - name: Debug GitHub OIDC
+        run: |
+          echo "Repository: ${{ github.repository }}"
+          echo "Ref: ${{ github.ref }}"
+          echo "Workflow: ${{ github.workflow }}"
+          echo "Event: ${{ github.event_name }}"
 
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v4
